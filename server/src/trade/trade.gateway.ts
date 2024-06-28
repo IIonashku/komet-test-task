@@ -14,6 +14,7 @@ const WEBSOCKET_PORT = +process.env.WEBSOCKET_PORT || 5001;
 @WebSocketGateway(WEBSOCKET_PORT, {
   cors: {
     origin: '*',
+    methods: ['GET', 'POST'],
   },
 })
 export class TradeGateway implements OnGatewayConnection {
