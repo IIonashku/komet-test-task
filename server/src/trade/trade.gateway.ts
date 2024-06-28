@@ -13,10 +13,7 @@ const WEBSOCKET_PORT = +process.env.WEBSOCKET_PORT || 5001;
 
 @WebSocketGateway(WEBSOCKET_PORT, {
   cors: {
-    origin: [
-      'http://localhost:5173/',
-      'https://main--willowy-gumption-1db5fb.netlify.app/',
-    ],
+    origin: '*',
   },
 })
 export class TradeGateway implements OnGatewayConnection {

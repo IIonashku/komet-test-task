@@ -6,10 +6,7 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: [
-      'http://localhost:5173/',
-      'https://main--willowy-gumption-1db5fb.netlify.app/',
-    ],
+    origin: '*',
   });
   await app.listen(PORT);
 }
