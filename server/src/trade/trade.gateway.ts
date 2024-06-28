@@ -12,7 +12,12 @@ import { LambdaService } from 'src/lambda/lambda.service';
 const WEBSOCKET_PORT = +process.env.WEBSOCKET_PORT || 5001;
 
 @WebSocketGateway(WEBSOCKET_PORT, {
-  cors: { origin: '*' },
+  cors: {
+    origin: [
+      'http://localhost:5173/',
+      'https://main--willowy-gumption-1db5fb.netlify.app/',
+    ],
+  },
 })
 export class TradeGateway implements OnGatewayConnection {
   constructor(
