@@ -9,9 +9,7 @@ import { MT4Service } from 'src/MT4/mt4.service';
 import { SendOrderResponse } from 'src/MT4/mt4.type';
 import { LambdaService } from 'src/lambda/lambda.service';
 
-const WEBSOCKET_PORT = +process.env.WEBSOCKET_PORT || 5001;
-
-@WebSocketGateway(WEBSOCKET_PORT, {
+@WebSocketGateway(0, {
   cors: {
     origin: '*',
     methods: ['GET', 'POST'],
